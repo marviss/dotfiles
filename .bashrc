@@ -131,3 +131,4 @@ PROMPT_USER_COLOR="$(tput bold)$(tput setaf 9)"
 . ~/.bash_prompt
 
 BAT_THEME=gruvbox
+alias config='/usr/bin/git --git-dir=/home/marvis/.dotfiles/ --work-tree=/home/marvis'
