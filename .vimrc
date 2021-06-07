@@ -1,6 +1,5 @@
 set rtp+=/home/marvis/.vim/pack/tabnine-vim
 set rtp+=~/.vim/bundle/Vundle.vim
-set background=dark
 set relativenumber
 
 call vundle#begin()
@@ -17,7 +16,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
-colorscheme deus
+colorscheme onedark 
 
 map <F5> :NERDTreeToggle<CR>
 map <C-a> :FZF<CR>
@@ -66,4 +65,4 @@ augroup _fzf
 augroup END
 
 filetype plugin on
-
+syntax enable
