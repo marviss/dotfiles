@@ -14,6 +14,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 colorscheme deus
