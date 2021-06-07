@@ -13,9 +13,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'tpope/vim-commentary'
 call vundle#end()
 
-colorscheme gruvbox
+colorscheme deus
 
 map <F5> :NERDTreeToggle<CR>
 map <C-a> :FZF<CR>
@@ -62,3 +63,6 @@ augroup _fzf
   autocmd!
   autocmd ColorScheme * call <sid>update_fzf_colors()
 augroup END
+
+filetype plugin on
+
