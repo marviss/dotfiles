@@ -1,6 +1,7 @@
 set rtp+=/home/marvis/.vim/pack/tabnine-vim
 set rtp+=~/.vim/bundle/Vundle.vim
 set background=dark
+set relativenumber
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
