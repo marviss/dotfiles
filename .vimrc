@@ -73,4 +73,8 @@ augroup _fzf
   autocmd ColorScheme * call <sid>update_fzf_colors()
 augroup END
 
+nnoremap <silent> <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>jr :YcmCompleter GoToReference<CR>
+nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<CR>
+
 filetype plugin on
