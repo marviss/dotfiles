@@ -1,7 +1,10 @@
 set rtp+=/home/marvis/.vim/pack/tabnine-vim
 set rtp+=~/.vim/bundle/Vundle.vim
 set relativenumber
+set number
 set hlsearch
+
+let mapleader = ","
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -15,12 +18,17 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'rking/ag.vim'
+
 call vundle#end()
 
-colorscheme onedark 
+syntax enable
+colorscheme onedark
+" colorscheme monokai
 
 map <F5> :NERDTreeToggle<CR>
 map <C-a> :FZF<CR>
+map <C-f> :Ag<CR>
 
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
@@ -66,4 +74,3 @@ augroup _fzf
 augroup END
 
 filetype plugin on
-syntax enable
