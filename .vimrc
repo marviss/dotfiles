@@ -1,6 +1,7 @@
 set rtp+=/home/marvis/.vim/pack/tabnine-vim
 set rtp+=~/.vim/bundle/Vundle.vim
 set relativenumber
+set number
 set hlsearch
 
 call vundle#begin()
@@ -64,6 +65,10 @@ augroup _fzf
   autocmd!
   autocmd ColorScheme * call <sid>update_fzf_colors()
 augroup END
+
+nnoremap <silent> <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>jr :YcmCompleter GoToReference<CR>
+nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<CR>
 
 filetype plugin on
 syntax enable
