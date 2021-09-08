@@ -1,34 +1,40 @@
 set rtp+=/home/marvis/.vim/pack/tabnine-vim
-set rtp+=~/.vim/bundle/Vundle.vim
 set relativenumber
 set number
 set hlsearch
 
 let mapleader = ","
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'frazrepo/vim-rainbow'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'tpope/vim-commentary'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rking/ag.vim'
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+Plug 'dense-analysis/ale'
+Plug 'crusoexia/vim-monokai'
+Plug 'VundleVim/Vundle.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
+Plug 'sheerun/vim-polyglot' " Syntax Highlighting
+"Plug 'Valloric/YouCompleteMe' " Vim Autocompletion
 
-call vundle#end()
+call plug#end()
 
 syntax enable
-colorscheme onedark
+" colorscheme onedark
 " colorscheme monokai
+set background=dark
+packadd! dracula
+colorscheme dracula
 
-map <F5> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 map <C-a> :FZF<CR>
-map <C-f> :Ag<CR>
+map <C-f> :Ag 
 
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
@@ -76,5 +82,23 @@ augroup END
 nnoremap <silent> <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>jr :YcmCompleter GoToReference<CR>
 nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<CR>
+
+let g:ale_linters = {
+            \'javascript': ['eslint'],
+            \'javascriptreact': ['eslint'],
+            \'typescript': ['eslint'],
+            \'typescriptreact': ['eslint'],
+                        \'html': ['eslint'],
+                        \'python': ['flake8', 'pylint'],
+            \}
+let g:ale_fixers = {
+            \'javascript': ['prettier'],
+            \'javascriptreact': ['prettier'],
+            \'typescript': ['prettier'],
+            \'typescriptreact': ['prettier'],
+                        \'html': ['prettier'],
+                        \'python': ['autoimport', 'black', 'isort'],
+            \}
+
 
 filetype plugin on
