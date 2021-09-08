@@ -116,7 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/home/marvis/anaconda3/bin:$PATH
 export GOROOT=/usr/local/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
@@ -131,4 +130,16 @@ PROMPT_USER_COLOR="$(tput bold)$(tput setaf 9)"
 . ~/.bash_prompt
 
 BAT_THEME=gruvbox
-alias config='/usr/bin/git --git-dir=/home/marvis/.dotfiles/ --work-tree=/home/marvis'
+alias config='/usr/bin/git --git-dir=/home/marv/.cfg/ --work-tree=/home/marv'
+
+export PATH=$PATH:/home/marv/anaconda3/bin
+
+source /opt/ros/kinetic/setup.bash
+export ROS_MASTER_URI=http://tiago-16c:11311
+export ROS_IP=10.68.0.128
+
+#export ROS_MASTER_URI=http://127.0.0.1:11311
+
+source ~/tiago_ws/devel/setup.bash
+
+export IK_SOLVER=trac_ik
