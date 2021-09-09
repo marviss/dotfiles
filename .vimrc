@@ -6,7 +6,7 @@ set hlsearch
 let mapleader = ","
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'crusoexia/vim-monokai'
 Plug 'VundleVim/Vundle.vim'
 Plug 'itchyny/lightline.vim'
@@ -17,20 +17,20 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
-Plug 'sheerun/vim-polyglot' " Syntax Highlighting
+"Plug 'sheerun/vim-polyglot' " Syntax Highlighting
 "Plug 'Valloric/YouCompleteMe' " Vim Autocompletion
 
 call plug#end()
 
 syntax enable
-" colorscheme onedark
+colorscheme onedark
 " colorscheme monokai
 set background=dark
-packadd! dracula
-colorscheme dracula
+" packadd! dracula
+" colorscheme dracula
 
 map <C-t> :NERDTreeToggle<CR>
 map <C-a> :FZF<CR>
@@ -102,3 +102,7 @@ let g:ale_fixers = {
 
 
 filetype plugin on
+
+set nocp
+set backspace=indent,eol,start
+
